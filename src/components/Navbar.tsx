@@ -16,6 +16,10 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const externalLinks = [
+    { name: 'Thaili ↓', href: '/Thaili-v1.0.0-Windows-Portable.zip', label: 'Download Thaili App' },
+  ];
+
   return (
     <>
       <a
@@ -42,6 +46,18 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
               key={link.name}
               href={link.href}
               className="text-sm font-medium text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#262626] dark:hover:text-[#d4d4d4] transition-colors"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              {link.name}
+            </a>
+          ))}
+          {externalLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              download
+              aria-label={link.label}
+              className="text-sm font-semibold px-3 py-1.5 rounded-full border border-teal-500/40 text-teal-600 dark:text-teal-400 hover:bg-teal-500/10 transition-colors"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {link.name}
@@ -85,6 +101,19 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-base font-medium text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#262626] dark:hover:text-[#d4d4d4] transition-colors py-2"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                {link.name}
+              </a>
+            ))}
+            {externalLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                download
+                aria-label={link.label}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-base font-semibold text-teal-600 dark:text-teal-400 hover:text-teal-500 transition-colors py-2"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {link.name}
