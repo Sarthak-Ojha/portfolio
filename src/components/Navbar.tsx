@@ -36,13 +36,6 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
       href: '/ThailiSetup-v1.0.0.exe',
       type: 'Setup Installer (.exe)',
     },
-    {
-      os: 'macOS',
-      desc: 'Apple Silicon & Intel',
-      href: '/Thaili-macOS-Installer.dmg',
-      type: 'Installer (.dmg)',
-      note: 'Right-click > Open on first launch',
-    },
   ];
 
   return (
@@ -108,11 +101,6 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
                       <div className="flex flex-col text-left">
                         <span className="font-medium text-sm">{opt.os}</span>
                         <span className="text-[11px] text-gray-500 dark:text-gray-400">{opt.type}</span>
-                        {opt.note && (
-                          <span className="text-[10px] text-teal-600/80 dark:text-teal-400/80">
-                            {opt.note}
-                          </span>
-                        )}
                       </div>
                       <Download className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 ml-2" />
                     </a>
@@ -183,11 +171,6 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
                       <div className="flex flex-col text-left">
                         <span>Download for {opt.os}</span>
                         <span className="text-[11px] font-normal text-gray-500 dark:text-gray-400">{opt.type}</span>
-                        {opt.note && (
-                          <span className="text-[10px] font-normal text-teal-600/80 dark:text-teal-400/80">
-                            {opt.note}
-                          </span>
-                        )}
                       </div>
                       <Download className="w-4 h-4 shrink-0 ml-2" />
                     </a>
